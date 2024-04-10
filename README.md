@@ -5,7 +5,7 @@ Our model was modified from [Schelling's segregation model](https://github.com/j
 
 ## Changes been made
 Add **two** city centers located at the top-left and bottom-right corners, which can move diagonally.\
-Add **one** parameter: the distance to the closest city center, which can be computed to affect household happiness.\
+Add **one** parameter: the distance to the closest city center, which can be computed to affect household happiness.
 
 ## Return to original model
 This model can be transferred to the original Schelling model by setting the `Required Distance to City Center` parameter to a considerable number, because under that condition, all agents will be happy with their distance to the city center. Therefore, the distance constraint disappears.
