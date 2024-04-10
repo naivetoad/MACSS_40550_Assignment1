@@ -19,7 +19,7 @@ This model can be transferred to the original Schelling model by setting the `Re
 1. To install dependencies, use pip and the requirements.txt file in this directory
    ```python
    $ pip install -r requirements.txt
-3. To run the model interactively, run Python `run.py` in this directory.
+3. To run the model interactively, run Python `run.py` in this directory
    ```python
    $ python run.py
 
