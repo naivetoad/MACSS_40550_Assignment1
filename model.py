@@ -75,7 +75,7 @@ class Schelling(mesa.Model):
         minority_pc=0.2,
         distance=2,
         city_distance=None,
-        seed=None,
+        seed=42,
     ):
         """
         Create a new Schelling model.
