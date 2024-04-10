@@ -22,8 +22,8 @@ def schelling_draw(agent):
     if (x, y) in agent.model.city_centers:
         portrayal["Color"] = "black"  # Set city center color to black
         portrayal["Shape"] = "rect"  # Set shape to rectangle for city center
-        portrayal["w"] = 0.8  # Width of the rectangle
-        portrayal["h"] = 0.8  # Height of the rectangle
+        portrayal["w"] = 0.8  
+        portrayal["h"] = 0.8  
         portrayal["Layer"] = 1  # Ensure city center is drawn above empty cells but below agents
         return portrayal
 
