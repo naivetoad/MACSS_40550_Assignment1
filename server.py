@@ -69,7 +69,7 @@ model_params = {
     ),
     "city_distance": mesa.visualization.Slider(
         name="City Distance", 
-        value=math.sqrt(20**2 + 20**2) / 2, min_value=0, max_value=math.sqrt(20**2 + 20**2), step=1)
+        value=0, min_value=0, max_value=math.sqrt(20**2 + 20**2) / 2, step=1) #Hard coded at this point because we hardcode height and width. to be edited if this changes.
 }
 
 server = mesa.visualization.ModularServer(
