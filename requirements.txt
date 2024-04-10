@@ -1,0 +1,4 @@
+jupyter
+matplotlib
+mesa~=2.0
+math
