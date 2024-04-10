@@ -14,16 +14,29 @@ def schelling_draw(agent):
     """
     Portrayal Method for canvas
     """
-    if agent is None:
-        return
-    portrayal = {"Shape": "circle", "r": 0.5, "Filled": "true", "Layer": 0}
+    # Portray generic cell
+    portrayal = {"Shape": "rect", "w": 1, "h": 1, "Filled": "true", "Layer": 0, "Color": "white"}
 
-    if agent.type == 0:
-        portrayal["Color"] = ["#FF0000", "#FF9999"]
-        portrayal["stroke_color"] = "#00FF00"
-    else:
-        portrayal["Color"] = ["#0000FF", "#9999FF"]
-        portrayal["stroke_color"] = "#000000"
+    # Differentiate portrayal for cities and agents
+    x, y = agent.pos if agent is not None else (None, None)
+    if (x, y) in agent.model.city_centers:
+        portrayal["Color"] = "black"  # Set city center color to black
+        portrayal["Shape"] = "rect"  # Set shape to rectangle for city center
+        portrayal["w"] = 0.8  # Width of the rectangle
+        portrayal["h"] = 0.8  # Height of the rectangle
+        portrayal["Layer"] = 1  # Ensure city center is drawn above empty cells but below agents
+        return portrayal
+
+    # Portrayal for agents
+    if agent is not None:
+        portrayal = {"Shape": "circle", "r": 0.5, "Filled": "true", "Layer": 2}  # Agents are drawn on top
+        if agent.type == 0:
+            portrayal["Color"] = ["#FF0000", "#FF9999"]
+            portrayal["stroke_color"] = "#00FF00"
+        else:
+            portrayal["Color"] = ["#0000FF", "#9999FF"]
+            portrayal["stroke_color"] = "#000000"
+
     return portrayal
 
 
