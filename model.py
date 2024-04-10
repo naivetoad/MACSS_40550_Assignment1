@@ -74,7 +74,7 @@ class Schelling(mesa.Model):
         density=0.8,
         minority_pc=0.2,
         distance=2,
-        city_distance=None
+        city_distance=None,
         seed=None,
     ):
         """
@@ -99,6 +99,12 @@ class Schelling(mesa.Model):
         self.distance = distance
         self.radius = radius
 
+        self.schedule = mesa.time.RandomActivation(self)
+        self.grid = mesa.space.SingleGrid(width, height, torus=False)
+
+        self.happy = 0
+        self.datacollector = mesa.DataCollector(model_reporters={"happy": "happy"})
+
         # Calculate city center positions based on city_distance
         if city_distance is None:
             city_distance = math.sqrt(height**2 + width**2) / 2  # Default to half the diagonal
@@ -107,12 +113,6 @@ class Schelling(mesa.Model):
             (max(0, min(self.width - 1, int(self.width / 2 - offset))), max(0, min(self.height - 1, int(self.height / 2 - offset)))),
             (max(0, min(self.width - 1, int(self.width / 2 + offset))), max(0, min(self.height - 1, int(self.height / 2 + offset))))
         ]
-
-        self.schedule = mesa.time.RandomActivation(self)
-        self.grid = mesa.space.SingleGrid(width, height, torus=False)
-
-        self.happy = 0
-        self.datacollector = mesa.DataCollector(model_reporters={"happy": "happy"})
 
         # Set up agents
         for _, pos in self.grid.coord_iter():
