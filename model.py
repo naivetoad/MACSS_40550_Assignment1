@@ -69,12 +69,12 @@ class Schelling(mesa.Model):
         self,
         height=20,
         width=20,
-        homophily=1.5,
+        homophily=2,
         radius=1,
-        density=0.8,
-        minority_pc=0.2,
-        distance=2,
-        city_distance=None,
+        density=0.7,
+        minority_pc=0.5,
+        distance=10,
+        city_distance=None, 
         seed=42,
     ):
         """

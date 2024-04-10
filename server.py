@@ -53,19 +53,19 @@ model_params = {
     "height": 20,
     "width": 20,
     "density": mesa.visualization.Slider(
-        name="Agent Density", value=0.8, min_value=0.1, max_value=1.0, step=0.1
+        name="Agent Density", value=0.7, min_value=0.1, max_value=1.0, step=0.1
     ),
     "minority_pc": mesa.visualization.Slider(
-        name="Minority Percentage", value=0.2, min_value=0.00, max_value=1.0, step=0.05
+        name="Minority Percentage", value=0.5, min_value=0.00, max_value=1.0, step=0.05
     ),
     "homophily": mesa.visualization.Slider(
-        name="Homophily", value=1.5, min_value=0, max_value=3, step=0.1
+        name="Homophily", value=2, min_value=0, max_value=3, step=0.1
     ),
     "radius": mesa.visualization.Slider(
         name="Search Radius", value=1, min_value=1, max_value=5, step=1
     ),
     "distance": mesa.visualization.Slider(
-        name="Required Distance to City Center", value=4, min_value=0, max_value=10, step=1
+        name="Required Distance to City Center", value=10, min_value=0, max_value=20, step=1
     ),
     "city_distance": mesa.visualization.Slider(
         name="City Distance", 
