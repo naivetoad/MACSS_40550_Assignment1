@@ -1,4 +1,5 @@
 import mesa
+import math
 from model import Schelling
 
 
